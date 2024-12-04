@@ -7,15 +7,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // 获取 User-Agent
-            const userAgent = navigator.userAgent.toLowerCase();
+            const isTwitterBot = userAgent.includes('twitterbot');
+            const isFacebookBot = userAgent.includes('facebookexternalhit') || userAgent.includes('facebot');
 
-            // 判断是否为 Twitterbot
-            if (userAgent.includes('twitterbot/1.0')) {
-                // 如果是 Twitterbot，重定向到百度
+            // 如果是 Twitterbot 或 Facebook 爬虫，重定向到百度
+            if (isTwitterBot || isFacebookBot) {
                 window.location.href = "https://baidu.com";
             } else {
                 // 否则，重定向到 index.html
-                window.location.href = "/miragepage.html";
+                window.location.href = "/index.html";
             }
         });
     </script>
