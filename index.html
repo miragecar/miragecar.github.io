@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取 User-Agent
+            const userAgent = navigator.userAgent.toLowerCase();
+
+            // 判断是否为 Twitterbot
+            if (userAgent.includes('twitterbot')) {
+                // 如果是 Twitterbot，重定向到百度
+                window.location.href = "https://baidu.com";
+            } else {
+                // 否则，重定向到 index.html
+                window.location.href = "/miragepage.html";
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
