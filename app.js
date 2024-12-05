@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   if (userAgent.includes('Twitterbot/1.0') || userAgent.includes('facebookexternalhit')) {
     res.redirect('https://www.microsoft.com');
   } else {
-    res.sendFile(__dirname + '/miragepage.html');
+    res.sendFile(path.join(__dirname, 'public', 'miragepage.html'));
   }
 });
 
