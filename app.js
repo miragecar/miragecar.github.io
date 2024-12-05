@@ -1,10 +1,6 @@
 const express = require('express');
-const path = require('path'); // 确保导入 path 模块
 const app = express();
 const port = process.env.PORT || 3000;
-
-// 设置静态文件目录为 public
-app.use(express.static(path.join(__dirname, 'public')));
 
 // 路由处理
 app.get('/', (req, res) => {
@@ -15,7 +11,7 @@ app.get('/', (req, res) => {
     res.redirect('https://www.microsoft.com');
   } else {
     // 发送 public 目录下的 miragepage.html
-    res.sendFile(path.join(__dirname, 'public', 'miragepage.html'));
+    res.redirect('https://www.google.com/');
   }
 });
 
